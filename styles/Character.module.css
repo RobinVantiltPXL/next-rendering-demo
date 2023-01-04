@@ -1,0 +1,10 @@
+.character {
+    display: inline-block;
+    margin: 30px;
+    padding: 20px;
+    border: 2px solid white
+}
+
+.character img {
+    height: 300px;
+}
