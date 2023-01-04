@@ -15,7 +15,7 @@ export async function getServerSideProps({params}) {
     }
 }
 
-export default function StaticPage({character}) {
+export default function ServerSideRenderDetail({character}) {
 
   return <Character char={character}/>;
 }

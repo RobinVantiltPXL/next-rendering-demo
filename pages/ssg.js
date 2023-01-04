@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Link from 'next/link'
 import Character from '../components/character';
 const BASE_URL = "https://akabab.github.io/starwars-api/api/id/"
 
@@ -19,5 +20,5 @@ export async function getStaticProps() {
 
 export default function StaticPage({characters}) {
 
-  return characters.map(c => <Character char={c} key={c.id}/>);
+  return characters.map(c => <Link href={"/ssg/" + c.id} key={c.id}><Character char={c}/></Link>);
 }

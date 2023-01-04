@@ -37,7 +37,7 @@ export async function getStaticProps({params}) {
     }
 }
 
-export default function StaticPage({character}) {
+export default function StaticDetailPage({character}) {
 
   return <Character char={character}/>;
 }
