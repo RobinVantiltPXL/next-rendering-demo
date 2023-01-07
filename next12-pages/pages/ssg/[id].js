@@ -6,12 +6,13 @@ const BASE_URL = "https://akabab.github.io/starwars-api/api/id/"
 export async function getStaticPaths() {
     const ids = [1, 2, 3, 4, 5].map(id => id.toString());
     
-    const paths = [];
-    ids.forEach(id => paths.push({ params: { id } }));
+    const paths = ids.map(id => {
+        return { params: { id } }
+    });
 
     return {
         paths,
-        fallback: false // or true or 'blocking'
+        fallback: 'blocking' // or true or false
     }
     /*
         [
@@ -33,7 +34,7 @@ export async function getStaticProps({params}) {
     return {
         props: {
             character
-        }
+        },
     }
 }
 

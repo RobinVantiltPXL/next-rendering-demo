@@ -5,7 +5,7 @@ export default function Character({char}) {
         <div className={styles.character}>
             <p>{char.name}</p>
             <p>{char.homeworld}</p>
-            <img src={char.image} alt={char.name}/>
+            <img src={char.image} alt={char.name} loading="lazy"/>
         </div>
     )
 }

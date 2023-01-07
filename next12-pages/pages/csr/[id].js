@@ -10,11 +10,9 @@ export default function ClientSideRenderDetail() {
     const [character, setCharacter] = useState(null);
 
     useEffect(() => { 
-        async function fetchData() {
-            const response = await axios.get(BASE_URL + id + ".json")
-            setCharacter(response.data);
+        if (id) {
+            axios.get(BASE_URL + id + ".json").then(res => setCharacter(res.data));
         }
-        if (id) fetchData();
     }, [id]);
 
     return (<>{ character && <Character char={character}/>}</>);
